@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Générateur gratuit de lettre de plainte CPRST | WirelessCodeCanada.ca</title>
+  <meta name="description" content="Générez gratuitement une lettre de plainte personnalisée au CRTC / à la CPRST en quelques minutes. Cite l'article exact du Code sur les services sans fil. Sans inscription, rien n'est stocké, export PDF.">
+  <meta name="keywords" content="lettre de plainte CPRST, plainte CRTC, modèle plainte sans-fil, contestation facture téléphone Canada">
+  <link rel="canonical" href="https://wirelesscodecanada.ca/fr/generateur-lettre-plainte.html">
+  <link rel="alternate" hreflang="en-CA" href="https://wirelesscodecanada.ca/en/complaint-letter-generator.html">
+  <link rel="alternate" hreflang="fr-CA" href="https://wirelesscodecanada.ca/fr/generateur-lettre-plainte.html">
+  <link rel="alternate" hreflang="x-default" href="https://wirelesscodecanada.ca/en/complaint-letter-generator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Générateur gratuit de lettre de plainte CPRST">
+  <meta property="og:url" content="https://wirelesscodecanada.ca/fr/generateur-lettre-plainte.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Principale">
+    <a class="brand" href="index.html"><span class="logo">WC</span><span>WirelessCodeCanada<small>Connaissez vos droits.</small></span></a>
+    <div class="nav-links">
+      <a href="generateur-lettre-plainte.html" aria-current="page">Générateur de plainte</a>
+      <a href="droits-code-sans-fil.html">Vos droits</a>
+      <a href="guide-plainte-ccts.html">Guide CPRST</a>
+      <a href="faq.html">FAQ</a>
+      <a href="boutique.html">Boutique</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Langue">
+        <a data-lang="en" href="../en/complaint-letter-generator.html">EN</a>
+        <a data-lang="fr" href="#">FR</a>
+      </div>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="generateur-lettre-plainte.html">Générateur de plainte</a>
+    <a href="droits-code-sans-fil.html">Vos droits</a>
+    <a href="guide-plainte-ccts.html">Guide CPRST</a>
+    <a href="guide-factures-surprises.html">Factures surprises</a>
+    <a href="guide-changer-fournisseur.html">Changer de fournisseur</a>
+    <a href="droits-code-internet.html">Code Internet</a>
+    <a href="faq.html">FAQ</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="a-propos.html">À propos</a>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <p class="breadcrumb"><a href="index.html">Accueil</a> / Générateur de lettre de plainte</p>
+  <h1>Générez votre lettre de plainte CRTC / CPRST — gratuit</h1>
+  <p class="muted" style="max-width:640px;">Répondez à quelques questions et nous rédigerons une lettre de plainte formelle et fondée en droit, citant la règle exacte que votre fournisseur a enfreinte. Rien de ce que vous saisissez n'est stocké ni transmis — tout reste dans votre navigateur.</p>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="card-body">
+
+      <div class="wizard-progress" aria-hidden="true">
+        <span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span>
+      </div>
+      <p class="wizard-step-label" aria-live="polite">Étape 1 sur 4</p>
+
+      <form id="complaint-wizard" novalidate autocomplete="off">
+
+        <!-- ÉTAPE 1 -->
+        <fieldset class="wizard-step active">
+          <legend><h2>Étape 1 — Vos renseignements</h2></legend>
+          <div class="form-group">
+            <label class="form-label" for="fullName">Nom complet <span class="req">*</span></label>
+            <input class="form-input" id="fullName" name="fullName" type="text" required>
+            <p class="form-error"></p>
+          </div>
+          <div class="form-row two">
+            <div class="form-group">
+              <label class="form-label" for="province">Province <span class="req">*</span></label>
+              <select class="form-select" id="province" name="province" required>
+                <option value="">Choisir…</option>
+                <option>AB</option><option>BC</option><option>MB</option><option>NB</option>
+                <option>NL</option><option>NS</option><option>NT</option><option>NU</option>
+                <option>ON</option><option>PE</option><option>QC</option><option>SK</option><option>YT</option>
+              </select>
+              <p class="form-error"></p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="city">Ville</label>
+              <input class="form-input" id="city" name="city" type="text">
+            </div>
+          </div>
+          <div class="form-row two">
+            <div class="form-group">
+              <label class="form-label" for="email">Courriel</label>
+              <input class="form-input" id="email" name="email" type="email">
+              <p class="form-hint">Pour vos dossiers seulement. Jamais stocké ni transmis.</p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Numéro de téléphone</label>
+              <input class="form-input" id="phone" name="phone" type="tel">
+            </div>
+          </div>
+          <div class="wizard-nav">
+            <span></span>
+            <button type="button" class="btn btn-primary" data-next>Suivant →</button>
+          </div>
+        </fieldset>
+
+        <!-- ÉTAPE 2 -->
+        <fieldset class="wizard-step">
+          <legend><h2>Étape 2 — Votre fournisseur et le problème</h2></legend>
+          <div class="form-group">
+            <label class="form-label" for="providerName">Nom du fournisseur <span class="req">*</span></label>
+            <input class="form-input" id="providerName" name="providerName" list="providers" required>
+            <datalist id="providers">
+              <option>Rogers</option><option>Bell</option><option>Telus</option><option>Fido</option>
+              <option>Koodo</option><option>Virgin Plus</option><option>Freedom Mobile</option>
+              <option>Shaw</option><option>Vidéotron</option><option>SaskTel</option><option>Autre</option>
+            </datalist>
+            <p class="form-error"></p>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="issueType">Type de problème <span class="req">*</span></label>
+            <select class="form-select" id="issueType" name="issueType" required>
+              <option value="">Choisir…</option>
+              <option value="switching-fee">Frais de changement ou de résiliation inattendus (après oct. 2025)</option>
+              <option value="bill-higher">Facture supérieure au prix du forfait convenu</option>
+              <option value="data-overage">Frais d'excédent de données sur un forfait illimité</option>
+              <option value="roaming">Frais d'itinérance internationale non autorisés</option>
+              <option value="locked-phone">Téléphone non déverrouillé malgré ma demande</option>
+              <option value="contract-change">Modalités du contrat modifiées sans consentement</option>
+              <option value="refused-resolve">Le fournisseur a refusé de régler la plainte</option>
+              <option value="internet">Problème de service Internet (Code Internet)</option>
+              <option value="other">Autre</option>
+            </select>
+            <p class="form-error"></p>
+          </div>
+          <div class="form-row two">
+            <div class="form-group">
+              <label class="form-label" for="incidentDate">Date de l'incident <span class="req">*</span></label>
+              <input class="form-input" id="incidentDate" name="incidentDate" type="date" required>
+              <p class="form-hint">Doit dater des deux dernières années.</p>
+              <p class="form-error"></p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="amount">Montant en litige (CAD) <span class="req">*</span></label>
+              <input class="form-input" id="amount" name="amount" type="number" min="0" step="0.01" data-kind="amount" required>
+              <p class="form-error"></p>
+            </div>
+          </div>
+          <div class="wizard-nav">
+            <button type="button" class="btn btn-ghost" data-back>← Retour</button>
+            <button type="button" class="btn btn-primary" data-next>Suivant →</button>
+          </div>
+        </fieldset>
+
+        <!-- ÉTAPE 3 -->
+        <fieldset class="wizard-step">
+          <legend><h2>Étape 3 — Ce qui s'est passé et ce que vous voulez</h2></legend>
+          <div class="form-group">
+            <label class="form-label" for="details">Décrivez ce qui s'est passé <span class="req">*</span></label>
+            <textarea class="form-input" id="details" name="details" required placeholder="p. ex. J'ai résilié mon forfait le 3 novembre 2025 et des frais de résiliation de 75 $ ont été ajoutés à ma facture finale, alors que ces frais sont interdits depuis le 30 octobre 2025."></textarea>
+            <p class="form-hint">Tenez-vous-en aux faits : dates, propos tenus, montants facturés. Ce texte ira directement dans votre lettre.</p>
+            <p class="form-error"></p>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="refNumber">Numéro de référence / de compte</label>
+            <input class="form-input" id="refNumber" name="refNumber" type="text">
+            <p class="form-hint">Facultatif, mais accélère la réponse du fournisseur.</p>
+          </div>
+          <div class="wizard-nav">
+            <button type="button" class="btn btn-ghost" data-back>← Retour</button>
+            <button type="button" class="btn btn-primary" data-next>Générer ma lettre →</button>
+          </div>
+        </fieldset>
+
+        <!-- ÉTAPE 4 — RÉSULTAT -->
+        <fieldset class="wizard-step">
+          <legend><h2>Votre lettre de plainte</h2></legend>
+          <div class="alert alert-success">
+            <p><strong>Terminé.</strong> Vérifiez votre lettre ci-dessous, puis téléchargez-la, copiez-la ou imprimez-la. Envoyez-la d'abord à votre fournisseur — gardez une copie et notez la date.</p>
+          </div>
+          <div class="letter-preview" id="letter-output" aria-live="polite"></div>
+          <div class="btn-row" style="margin-top:18px;">
+            <button type="button" class="btn btn-primary" id="download-pdf">⬇ Télécharger le PDF</button>
+            <button type="button" class="btn btn-outline" id="copy-letter">Copier le texte</button>
+            <button type="button" class="btn btn-ghost" id="print-letter">Imprimer</button>
+            <button type="button" class="btn btn-ghost" id="restart-wizard">Recommencer</button>
+          </div>
+
+          <div class="alert alert-info" style="margin-top:24px;">
+            <p><strong>Le fournisseur vous a ignoré ou a refusé ?</strong> Vous pouvez escalader gratuitement à la CPRST — l'organisme indépendant qui règle les plaintes en télécom. <a href="guide-plainte-ccts.html">Lisez notre guide étape par étape →</a></p>
+          </div>
+
+          <div class="adsense-slot" data-ad-client="ca-pub-8643026289824701" data-ad-slot="SLOT_GENERATOR_RESULT" data-ad-format="auto">Publicité</div>
+
+          <div class="upsell-card" style="margin-top:8px;">
+            <span class="badge">Option</span>
+            <h3 style="margin-top:10px;">Trousse de plainte complète — 9 $</h3>
+            <p class="muted">Modèles de lettres d'escalade, liste de vérification CPRST, scripts de suivi par courriel et feuille de suivi des remboursements.</p>
+            <a class="btn btn-secondary" href="boutique.html">Voir la trousse →</a>
+          </div>
+        </fieldset>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="wizard-nav" style="justify-content:flex-start;margin-top:20px;">
+    <p class="small muted">🔒 Confidentialité : cet outil fonctionne entièrement dans votre navigateur. Nous ne voyons, ne stockons ni ne transmettons jamais ce que vous saisissez.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <a class="brand" href="index.html" style="color:#fff;"><span class="logo">WC</span><span>WirelessCodeCanada</span></a>
+      <p class="footer-disclaimer">Des outils gratuits et clairs pour aider les Canadiens à comprendre et faire valoir leurs droits en vertu du Code sur les services sans fil et du Code sur les services Internet du CRTC. Nous ne sommes affiliés ni au CRTC, ni à la CPRST, ni à aucun fournisseur.</p>
+    </div>
+    <div>
+      <h4>Outils et guides</h4>
+      <ul>
+        <li><a href="generateur-lettre-plainte.html">Générateur de lettre de plainte</a></li>
+        <li><a href="droits-code-sans-fil.html">Droits — Code sans-fil</a></li>
+        <li><a href="guide-plainte-ccts.html">Guide de plainte CPRST</a></li>
+        <li><a href="guide-factures-surprises.html">Guide factures surprises</a></li>
+        <li><a href="guide-changer-fournisseur.html">Guide changer de fournisseur</a></li>
+        <li><a href="droits-code-internet.html">Droits — Code Internet</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="boutique.html">Boutique</a></li>
+        <li><a href="a-propos.html">À propos et contact</a></li>
+        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+        <li><a href="conditions-utilisation.html">Conditions d'utilisation</a></li>
+        <li><a href="avis-juridique.html">Avis juridique</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span data-year>2026</span> WirelessCodeCanada.ca — Information juridique générale, pas un avis juridique. <a href="avis-juridique.html">Voir l'avis</a>.</p>
+  </div>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>
