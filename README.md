@@ -91,7 +91,7 @@ No server-side runtime is required.
    product URLs.
 4. **Domain** — all canonical/hreflang/sitemap URLs assume `https://wirelesscodecanada.ca`.
    Update them if the domain differs.
-5. **Contact emails** — `hello@` and `privacy@wirelesscodecanada.ca` are referenced site-wide.
+5. **Contact emails** — `hello@` and `velmorpub@gmail.com` are referenced site-wide.
 
 ## Legal note
 
