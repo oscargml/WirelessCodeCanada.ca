@@ -9,6 +9,11 @@
 (function () {
   "use strict";
 
+  /* ---- Affiliate: single source of truth. Paste your tracked RATESDOTCA
+     referral URL here and every [data-affiliate] CTA updates at once.
+     While "#", the buttons stay inert (no navigation). ---- */
+  var AFFILIATE_URL = "#"; // TODO: e.g. "https://ratesdotca.ca/?ref=YOURID"
+
   /* ---- EN <-> FR exact-page map (filenames only) ---- */
   var EN_TO_FR = {
     "index.html": "index.html",
@@ -417,11 +422,22 @@ today + "\n\n" +
     showStep(0);
   }
 
+  /* ---- Affiliate CTAs: point every [data-affiliate] link at AFFILIATE_URL.
+     Until configured, keep them inert so clicks don't jump to page top. ---- */
+  function initAffiliate() {
+    var ready = AFFILIATE_URL && AFFILIATE_URL !== "#";
+    document.querySelectorAll("a[data-affiliate]").forEach(function (a) {
+      if (ready) a.setAttribute("href", AFFILIATE_URL);
+      else a.addEventListener("click", function (e) { e.preventDefault(); });
+    });
+  }
+
   /* ---- Boot ---- */
   document.addEventListener("DOMContentLoaded", function () {
     initLangToggle();
     initNav();
     initYear();
     initWizard();
+    initAffiliate();
   });
 })();
